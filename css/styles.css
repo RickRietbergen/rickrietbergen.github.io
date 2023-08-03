@@ -2,14 +2,40 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 :root {
-    --background: #000000;
+    --background: grey;
 }
 
-.background {
+.landing_box {
+    width: 100%;
+    height: 100vh;
+    background-color: blue;
+}
+
+.about_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100vh;
     background-color: var(--background);
+}
+.about_box .box {
+    width: 40%;
+    height: 150px;
+    background-color: white;
+
+    transform: translateY(50px); /* Move the box down by 50px initially */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Transition properties for opacity and transform */
+}
+.about_box .box p {
+    color: black;
+}
+
+.about_box .box.show {
+    opacity: 1; /* When the 'show' class is added, set opacity to 1 */
+    transform: translateY(0); /* Move the box back to its original position */
 }
